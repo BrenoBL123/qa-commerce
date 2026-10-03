@@ -1,6 +1,6 @@
 # QA-Commerce
 
-### Loja virtual Geek para simulação de testes 
+### Loja virtual Geek para simulação de testes + testes Web e API automatizados com Cypress
 
 ## Clonando e executando em sua máquina
 
@@ -51,6 +51,10 @@ No console vai aparecer os endereços do site e do banco.
 O site você acessaem: http://localhost:3000/
 
 A documentação funciona em: http://localhost:3000/api-docs/
+
+
+#### Para executar os testes automatizados:
+```
 
 
 
