@@ -23,6 +23,18 @@
   },
   "allowScripts": {
     "sqlite3@6.0.1": true,
-    "bcrypt@6.0.0": true
+    "bcrypt@6.0.0": true,
+    "cypress@16.1.1": true
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^28.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^16.1.1",
+    "esbuild": "^0.28.2"
+  },
+  "cypress-cucumber-preprocessor": {
+  "stepDefinitions": "cypress/e2e/step_definitions/**/*.js",
+  "filterSpecs": true,
+  "omitFiltered": true
   }
 }
