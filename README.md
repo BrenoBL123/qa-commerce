@@ -56,8 +56,23 @@ A documentação funciona em: http://localhost:3000/api-docs/
 #### Para executar os testes automatizados:
 ```
 
+| Comando | O que executa |
+|---|---|
+| `npm run test:web` | Todos os testes web |
+| `npm run test:web:regressao` | Suíte de regressão (`@regressao`) |
+| `npm run test:web:smoke` | Testes essenciais (`@smoke`) |
+| `npm run test:web:login` | Cenários de login (`@login`) |
+| `npm run test:web:carrinho` | Cenários de carrinho (`@carrinho`) |
+| `npm run test:web:checkout` | Cenários de checkout (`@checkout`) |
+| `npm run cy:open` | Abre a interface do Cypress para executar e depurar os testes visualmente |
+
+Para ver o navegador durante a execução, adicione `--headed` ao final do comando:
+```
+npm run test:web:carrinho -- --headed
 
 
+### Testes API
 
+_Em construção. As automações de API serão adicionadas nesta seção._
 
 

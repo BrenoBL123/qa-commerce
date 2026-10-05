@@ -7,7 +7,7 @@ Dado("que o cliente está na página de login", () => {
 });
 
 Quando("o cliente faz login com e-mail e senha válidos", () => {
-    LoginPage.fazerLogin("teste@teste.com", "Teste@123");
+    LoginPage.fazerLogin("admin@admin.com", "admin");
 });
 
 Entao("o cliente deve ser direcionado para a área logada", () => {
@@ -15,7 +15,7 @@ Entao("o cliente deve ser direcionado para a área logada", () => {
 });
 
 Entao("deve ser exibida a identificação do cliente logado", () => {
-    DashBoardPage.validarNomeUsuarioLogado("teste teste");
+    DashBoardPage.validarNomeUsuarioLogado("Admin");
 });
 
 
