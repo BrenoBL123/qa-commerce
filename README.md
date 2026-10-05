@@ -12,10 +12,8 @@
 
 **Versões utilizadas no projeto:**
 
-| Ferramenta | Versão |
-|---|---|
-| Node.js | **24.19.0** |
-| npm | **12.2.0** |
+Node.js -> **24.19.0**
+npm -> **12.2.0**
 
 Versões mais novas do Node.js (como a 26) não funcionam, pois a dependência `jsonwebtoken` usa um recurso (`SlowBuffer`) que foi removido do Node.
 
