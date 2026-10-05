@@ -67,7 +67,7 @@ A documentação funciona em: http://localhost:3000/api-docs/
 Para ver o navegador durante a execução, adicione `--headed` ao final do comando:
 ```
 npm run test:web:carrinho -- --headed
-
+```
 
 ### Testes API
 
