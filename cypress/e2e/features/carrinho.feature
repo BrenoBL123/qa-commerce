@@ -7,26 +7,15 @@ Funcionalidade: Adicionar produto ao carrinho
   Contexto:
     Dado que o cliente está na página inicial da loja
 
-  @carrinho @smoke
+  @carrinho
   Cenário: Adicionar um produto ao carrinho
-    Quando o cliente adiciona um produto ao carrinho
+    Quando o cliente adiciona "<quantidade>" vezes o produto "<produto>" no carrinho
     Então o produto deve ser exibido no carrinho
-    E o carrinho deve exibir o nome, o preço e a quantidade do produto
-    E o valor total do carrinho deve corresponder ao preço do produto
+    E o carrinho deve exibir o nome, a quantidade do produto e os preços
+    E o valor total do carrinho deve corresponder à soma de preço dos produtos
 
-  @carrinho
-  Cenário: Adicionar mais de uma unidade do mesmo produto
-    Quando o cliente adiciona 2 unidades de um produto ao carrinho
-    Então o carrinho deve exibir a quantidade 2 para o produto
-    E o valor total do carrinho deve ser o preço do produto multiplicado pela quantidade
-
-  @carrinho
-  Cenário: Adicionar produtos diferentes ao carrinho
-    Quando o cliente adiciona dois produtos diferentes ao carrinho
-    Então os dois produtos devem ser exibidos no carrinho
-    E o valor total do carrinho deve ser a soma dos preços dos produtos
-
-  @carrinho
-  Cenário: Indicador de quantidade de itens no carrinho
-    Quando o cliente adiciona um produto ao carrinho
-    Então o indicador do carrinho deve mostrar 1 item
+    Exemplos:
+      | quantidade | produto           |
+      | 4          | Moletom com capuz |
+      | 10         | Ecobag            |
+      | 7          | Garrafa           |

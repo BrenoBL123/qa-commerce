@@ -1,8 +1,8 @@
 class LoginPage {
 
-    elements = {
+    elementos = {
         emailInput: () => cy.get("#email"),
-        passwordInput: () => cy.get("#password"),
+        senhaInput: () => cy.get("#password"),
         loginForm: () => cy.get("#login-form"),
     };
 
@@ -11,9 +11,9 @@ class LoginPage {
     }
 
     fazerLogin(email, senha) {
-        this.elements.emailInput().type(email);
-        this.elements.passwordInput().type(senha, { log: false });
-        this.elements.loginForm().submit();
+        this.elementos.emailInput().type(email);
+        this.elementos.senhaInput().type(senha, { log: false });
+        this.elementos.loginForm().submit();
     }
 }
 
