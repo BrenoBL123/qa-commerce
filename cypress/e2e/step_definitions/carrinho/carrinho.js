@@ -24,5 +24,4 @@ Entao ("o carrinho deve exibir o nome, a quantidade do produto e os preços", fu
 
 Entao ("o valor total do carrinho deve corresponder à soma de preço dos produtos", function () {
     CarrinhoPage.validarValorTotalCarrinho(this.produto.quantidade, this.produto.preco);
-    CarrinhoPage.limparCarrinho();
 });

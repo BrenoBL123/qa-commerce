@@ -1,32 +1,38 @@
 # language: pt
-Funcionalidade: Checkout simples
+Funcionalidade: Validação de campos obrigatórios no checkout
   Como cliente da loja QA Commerce
-  Quero finalizar minha compra
-  Para receber os produtos que escolhi
+  Quero ser avisado quando faltar alguma informação obrigatória
+  Para corrigir os dados antes de finalizar a compra
 
   Contexto:
-    Dado que o cliente possui um produto no carrinho
-    E está na página de checkout
+    Dado que o cliente está na página de checkout
 
-  @checkout @smoke
-  Esquema do Cenário: Finalizar compra com sucesso usando <metodo>
-    Quando o cliente preenche todos os campos obrigatórios com dados válidos
-    E escolhe o método de pagamento "<metodo>"
-    E confirma o pedido
-    Então deve ser exibida a mensagem de sucesso do pedido
+  @checkout @regressao
+  Cenário: Tentar finalizar o checkout sem preencher nenhum campo
+    Quando o cliente tenta confirmar o pedido sem preencher os campos obrigatórios
+    Então deve ser exibida uma mensagem de erro para cada campo obrigatório
+    E o pedido não deve ser finalizado
+
+  @checkout @regressao
+  Esquema do Cenário: Tentar finalizar o checkout sem preencher o campo <campo>
+    Quando o cliente preenche todos os campos obrigatórios, exceto "<campo>"
+    E escolhe um método de pagamento "<meio_pagamento>"
+    E informações de pagamento
+    E tenta confirmar o pedido
+    Então deve ser exibida a mensagem de erro do campo "<campo>"
+    E o pedido não deve ser finalizado
 
     Exemplos:
-      | metodo            |
-      | Boleto            |
-      | Pix               |
-      | Cartão de Crédito |
+    | meio_pagamento    | campo            |
+    | Cartão de Crédito | Nome             |
+    | Boleto            | Sobrenome        |
+    | Pix               | Endereço         |
+    | Cartão de Crédito | Número           |
+    | Boleto            | CEP              |
+    | Pix               | E-mail           |
+    | Boleto            | Termos           |
+    | Cartão de Crédito | Número do Cartão |
+    | Cartão de Crédito | Validade         |
+    | Cartão de Crédito | CVC              |
+    
 
-  @checkout
-  Cenário: Resumo do pedido exibido no checkout
-    Então o resumo do pedido deve exibir os produtos do carrinho
-    E o valor total do pedido deve corresponder ao valor total do carrinho
-
-  @checkout
-  Cenário: Carrinho é esvaziado após a compra
-    Quando o cliente finaliza a compra com dados válidos
-    Então o carrinho deve ficar vazio

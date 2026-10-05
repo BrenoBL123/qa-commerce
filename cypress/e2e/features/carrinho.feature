@@ -7,7 +7,7 @@ Funcionalidade: Adicionar produto ao carrinho
   Contexto:
     Dado que o cliente está na página inicial da loja
 
-  @carrinho
+  @carrinho @regressao
   Cenário: Adicionar um produto ao carrinho
     Quando o cliente adiciona "<quantidade>" vezes o produto "<produto>" no carrinho
     Então o produto deve ser exibido no carrinho

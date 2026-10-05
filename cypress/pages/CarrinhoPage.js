@@ -1,7 +1,6 @@
 class CarrinhoPage {
 
     elementos = {
-        removerProdutoCarrinhoButton: () => cy.get(".remove-from-cart"),
         itemPorNome: (nome) => cy.contains("#cart-list .cart-item legend", nome, { matchCase: false }).closest(".cart-item"),
         totalProdutos: () => cy.get("#total-products"),
     };
@@ -19,12 +18,6 @@ class CarrinhoPage {
         const valorTotalEsperado = (quantidade * preco).toFixed(2);
         cy.log(`Valor total esperado do carrinho: R$${valorTotalEsperado}`);
         this.elementos.totalProdutos().should("have.text", `Valor total do(s) Produto(s): R$${valorTotalEsperado}`);
-    }
-    
-    limparCarrinho() {
-        this.elementos.removerProdutoCarrinhoButton().each(($button) => {
-            cy.wrap($button).click();
-        });
     }
     
 }

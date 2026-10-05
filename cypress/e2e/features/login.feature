@@ -7,7 +7,7 @@ Funcionalidade: Login
   Contexto:
     Dado que o cliente está na página de login
 
-  @login @smoke
+  @login @regressao @smoke
   Cenário: Login com credenciais válidas
     Quando o cliente faz login com e-mail e senha válidos
     Então o cliente deve ser direcionado para a área logada
