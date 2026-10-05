@@ -10,18 +10,37 @@
 -Visual Studio Code ( ou editor de sua prefrência) - você encontra em: https://code.visualstudio.com/download
 -Git: você encontra em: https://git-scm.com/downloads
 
-**Observação sobre a versão do Node.js:** o projeto funciona com o **Node.js 24 (LTS)** — testado na versão 24.19.0. 
-Versões mais novas (como o Node.js 26) não funcionam, pois a dependência `jsonwebtoken` usa um recurso (`SlowBuffer`) que foi removido do Node. 
-Para verificar a versão instalada, rode no terminal:
+**Versões utilizadas no projeto:**
+
+| Ferramenta | Versão |
+|---|---|
+| Node.js | **24.19.0** |
+| npm | **12.2.0** |
+
+Versões mais novas do Node.js (como a 26) não funcionam, pois a dependência `jsonwebtoken` usa um recurso (`SlowBuffer`) que foi removido do Node.
+
+Para verificar as versões instaladas, rode no terminal:
 ```
 node -v
+npm -v
 ```
-Se aparecer uma versão diferente da 24, desinstale o Node atual e instale a versão LTS pelo site https://nodejs.org/en/ ou, no Windows, via terminal:
+
+Se o Node.js for diferente de `v24.19.0`, desinstale o atual e instale a versão exata.
+
+**Windows (terminal):**
 ```
 winget uninstall --name Node.js
-winget install OpenJS.NodeJS.LTS
+winget install OpenJS.NodeJS.LTS --version 24.19.0
 ```
-Depois feche e abra o terminal novamente e confira com `node -v`.
+
+**Pelo site:** baixe o instalador da versão 24.19.0 em https://nodejs.org/dist/v24.19.0/
+
+Depois de instalar o Node.js, atualize o npm para a mesma versão do projeto:
+```
+npm install -g npm@12.2.0
+```
+
+Feche e abra o terminal novamente e confira com `node -v` e `npm -v`.
 
 Via terminal, rode os seguintes comandos:
 ```  
