@@ -82,7 +82,7 @@ A documentação funciona em: http://localhost:3000/api-docs/
 `npm run cy:open` -> Abre a interface do Cypress para executar e depurar os testes visualmente
 ```
 
-Para ver o navegador durante a execução, adicione `--headed` ao final do comando:
+Para ver o navegador durante a execução, adicione `-- --headed` ao final do comando:
 ```
 npm run test:web:carrinho -- --headed
 ```
