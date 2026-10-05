@@ -25,7 +25,7 @@ Depois feche e abra o terminal novamente e confira com `node -v`.
 
 Via terminal, rode os seguintes comandos:
 ```  
-git clone https://github.com/fabioaraujoqa/qa-commerce.git
+git clone https://github.com/BrenoBL123/qa-commerce.git
 ```
 ```
 cd qa-commerce
