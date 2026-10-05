@@ -5,7 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "db": "node scripts/init_db.js"
+    "db": "node scripts/init_db.js",
+    "cy:open": "cypress open",
+    "test:web": "cypress run",
+    "test:web:login": "cypress run --expose tags=@login",
+    "test:web:carrinho": "cypress run --expose tags=@carrinho",
+    "test:web:checkout": "cypress run --expose tags=@checkout",
+    "test:web:regressao": "cypress run --expose tags=@regressao",
+    "test:web:smoke": "cypress run --expose tags=@smoke"
   },
   "keywords": [],
   "author": "",
@@ -36,14 +43,5 @@
   "stepDefinitions": "cypress/e2e/step_definitions/**/*.js",
   "filterSpecs": true,
   "omitFiltered": true
-  },
-  "scripts": {
-    "cy:open": "cypress open",
-    "test:web": "cypress run",
-    "test:web:login": "cypress run --expose tags=@login",
-    "test:web:carrinho": "cypress run --expose tags=@carrinho",
-    "test:web:checkout": "cypress run --expose tags=@checkout",
-    "test:web:regressao": "cypress run --expose tags=@regressao",
-    "test:web:smoke": "cypress run --expose tags=@smoke"
   }
 }
