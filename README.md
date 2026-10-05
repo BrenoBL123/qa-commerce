@@ -55,7 +55,6 @@ A documentação funciona em: http://localhost:3000/api-docs/
 
 #### Para executar os testes automatizados:
 ```
-
 `npm run test:web` -> Todos os testes web
 `npm run test:web:regressao` -> Suíte de regressão (`@regressao`)
 `npm run test:web:smoke` -> Testes essenciais (`@smoke`)
