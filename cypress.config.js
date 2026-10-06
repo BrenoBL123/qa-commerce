@@ -8,7 +8,7 @@ const createEsbuildPlugin =
 module.exports = defineConfig({
   e2e: {
     baseUrl: "http://localhost:3000",
-    specPattern: "cypress/e2e/features/**/*.feature",
+    specPattern: "cypress/e2e/**/*.feature",
     async  setupNodeEvents(on, config) {
       // implement node event listeners here
       await addCucumberPreprocessorPlugin(on, config);

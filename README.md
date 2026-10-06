@@ -72,6 +72,16 @@ A documentação funciona em: http://localhost:3000/api-docs/
 
 
 #### Para executar os testes automatizados:
+
+**Importante:** o servidor precisa estar rodando (`npm start`) em outro terminal antes de executar os testes.
+
+**Todos os testes:**
+```
+`npm run test:all` -> Todos os testes (Web e API)
+`npm run cy:open` -> Abre a interface do Cypress para executar e depurar os testes visualmente
+```
+
+**Testes Web:**
 ```
 `npm run test:web` -> Todos os testes web
 `npm run test:web:regressao` -> Suíte de regressão (`@regressao`)
@@ -79,16 +89,17 @@ A documentação funciona em: http://localhost:3000/api-docs/
 `npm run test:web:login` -> Cenários de login (`@login`)
 `npm run test:web:carrinho` -> Cenários de carrinho (`@carrinho`)
 `npm run test:web:checkout` -> Cenários de checkout (`@checkout`)
-`npm run cy:open` -> Abre a interface do Cypress para executar e depurar os testes visualmente
+```
+
+**Testes API:**
+```
+`npm run test:api` -> Todos os testes de API
+`npm run test:api:carrinho` -> Cenários de API do carrinho (`@carrinho-api`)
 ```
 
 Para ver o navegador durante a execução, adicione `--headed` ao final do comando:
 ```
 npm run test:web:carrinho -- --headed
 ```
-
-### Testes API
-
-_Em construção. As automações de API serão adicionadas nesta seção._
 
 

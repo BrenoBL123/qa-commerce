@@ -4,7 +4,7 @@ class LoginPage {
         emailInput: () => cy.get("#email"),
         senhaInput: () => cy.get("#password"),
         loginForm: () => cy.get("#login-form"),
-    };
+    }
 
     acessarLogin() {
         cy.visit("/login.html");

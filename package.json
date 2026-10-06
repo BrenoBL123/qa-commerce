@@ -7,12 +7,15 @@
     "start": "node src/server.js",
     "db": "node scripts/init_db.js",
     "cy:open": "cypress open",
-    "test:web": "cypress run",
-    "test:web:login": "cypress run --expose tags=@login",
-    "test:web:carrinho": "cypress run --expose tags=@carrinho",
-    "test:web:checkout": "cypress run --expose tags=@checkout",
-    "test:web:regressao": "cypress run --expose tags=@regressao",
-    "test:web:smoke": "cypress run --expose tags=@smoke"
+    "test:web": "cypress run --spec \"cypress/e2e/web/**/*.feature\"",
+    "test:api": "cypress run --spec \"cypress/e2e/api/**/*.feature\"",
+    "test:all": "cypress run",
+    "test:web:login": "cypress run --spec \"cypress/e2e/web/**/*.feature\" --expose tags=@login",
+    "test:web:carrinho": "cypress run --spec \"cypress/e2e/web/**/*.feature\" --expose tags=@carrinho",
+    "test:web:checkout": "cypress run --spec \"cypress/e2e/web/**/*.feature\" --expose tags=@checkout",
+    "test:web:regressao": "cypress run --spec \"cypress/e2e/web/**/*.feature\" --expose tags=@regressao",
+    "test:web:smoke": "cypress run --spec \"cypress/e2e/web/**/*.feature\" --expose tags=@smoke",
+    "test:api:carrinho": "cypress run --spec \"cypress/e2e/api/**/*.feature\" --expose tags=@carrinho-api"
   },
   "keywords": [],
   "author": "",
@@ -40,8 +43,11 @@
     "esbuild": "^0.28.2"
   },
   "cypress-cucumber-preprocessor": {
-  "stepDefinitions": "cypress/e2e/step_definitions/**/*.js",
-  "filterSpecs": true,
-  "omitFiltered": true
+    "stepDefinitions": [
+      "cypress/e2e/[filepart]/step_definitions/**/*.js",
+      "cypress/support/step_definitions/**/*.js"
+    ],
+    "filterSpecs": true,
+    "omitFiltered": true
   }
 }

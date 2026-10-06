@@ -34,5 +34,3 @@ Funcionalidade: Validação de campos obrigatórios no checkout
     | Cartão de Crédito | Número do Cartão |
     | Cartão de Crédito | Validade         |
     | Cartão de Crédito | CVC              |
-    
-

@@ -1,6 +1,6 @@
 import { Given as Dado, When as Quando, Then as Entao } from "@badeball/cypress-cucumber-preprocessor";
-import LoginPage from "../../../pages/LoginPage";
-import DashBoardPage from "../../../pages/DashboardPage";
+import LoginPage from "../../../../pages/LoginPage";
+import DashBoardPage from "../../../../pages/DashboardPage";
 
 Dado("que o cliente está na página de login", () => {
     LoginPage.acessarLogin();
@@ -17,6 +17,3 @@ Entao("o cliente deve ser direcionado para a área logada", () => {
 Entao("deve ser exibida a identificação do cliente logado", () => {
     DashBoardPage.validarNomeUsuarioLogado("Admin");
 });
-
-
-

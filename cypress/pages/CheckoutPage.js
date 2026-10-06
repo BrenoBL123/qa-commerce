@@ -8,7 +8,7 @@ class CheckoutPage {
         campo: (id) => cy.get(`#${id}`),
         camposInvalidos: () => cy.get("#checkout-form .is-invalid"),
         mensagensErro: () => cy.get("#checkout-form .invalid-feedback"),
-    };
+    }
 
     // id do campo → mensagens esperadas
     errosEsperados = {
@@ -22,7 +22,7 @@ class CheckoutPage {
         "card-number": ["Este campo é obrigatório."],
         "card-expiry": ["Este campo é obrigatório."],
         "card-cvc": ["Este campo é obrigatório."],
-    };
+    }
 
     // nome do campo na feature → id no formulário e valor válido para preenchimento
     camposObrigatorios = {
@@ -33,20 +33,20 @@ class CheckoutPage {
         "cep": { id: "cep", valor: "12345678" },
         "email": { id: "email", valor: "maria.silva@teste.com" },
         "termos": { id: "terms" },
-    };
+    }
 
     // campos que só existem quando o meio de pagamento é Cartão de Crédito
     camposCartao = {
         "numero do cartao": { id: "card-number", valor: "4111111111111111" },
         "validade": { id: "card-expiry", valor: "12/30" },
         "cvc": { id: "card-cvc", valor: "123" },
-    };
+    }
 
     meiosPagamento = {
         "cartao de credito": "payment-card",
         "boleto": "payment-boleto",
         "pix": "payment-pix",
-    };
+    }
 
     acessarCheckout() {
         cy.visit("/checkout.html");

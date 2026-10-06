@@ -3,7 +3,7 @@ class CarrinhoPage {
     elementos = {
         itemPorNome: (nome) => cy.contains("#cart-list .cart-item legend", nome, { matchCase: false }).closest(".cart-item"),
         totalProdutos: () => cy.get("#total-products"),
-    };
+    }
 
     validarInformacoesCarrinho(nomeProduto, quantidade, preco) {
         cy.log(`Validando informações do produto no carrinho: nome = ${nomeProduto}, quantidade = ${quantidade}, preço unitário = ${preco}`);
@@ -19,7 +19,6 @@ class CarrinhoPage {
         cy.log(`Valor total esperado do carrinho: R$${valorTotalEsperado}`);
         this.elementos.totalProdutos().should("have.text", `Valor total do(s) Produto(s): R$${valorTotalEsperado}`);
     }
-    
 }
 
 export default new CarrinhoPage();

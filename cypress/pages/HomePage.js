@@ -14,17 +14,17 @@ class HomePage {
 
     salvarInformacoesProduto(nomeProduto) {
         return cy.contains("#product-list .card legend a", nomeProduto, { matchCase: false })
-        .closest(".card")
-        .then(($card) => {
-            const posicao = Cypress.$("#product-list .card").index($card);
-            const preco = parseFloat($card.find("p:contains('Preço:')").text().replace("Preço: R$", ""));
-            cy.log(`Informações do produto "${nomeProduto}" - Posição: ${posicao}, Preço: R$${preco.toFixed(2)}`);
+            .closest(".card")
+            .then(($card) => {
+                const posicao = Cypress.$("#product-list .card").index($card);
+                const preco = parseFloat($card.find("p:contains('Preço:')").text().replace("Preço: R$", ""));
+                cy.log(`Informações do produto "${nomeProduto}" - Posição: ${posicao}, Preço: R$${preco.toFixed(2)}`);
 
-        return cy.wrap({ posicao, preco });
-        });
+                return cy.wrap({ posicao, preco });
+            });
     }
 
-    preencherQuantidadeCarrinho(posicao,quantidade) {
+    preencherQuantidadeCarrinho(posicao, quantidade) {
         this.elementos.quantidadeInput().eq(posicao).clear().type(quantidade);
         cy.log(`Adicionando ${quantidade} unidades do produto na posição ${posicao} ao carrinho.`);
     }
